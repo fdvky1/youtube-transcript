@@ -74,6 +74,7 @@ export class YoutubeTranscript {
     const videoPageResponse = await fetch(
       `https://www.youtube.com/watch?v=${identifier}`,
       {
+        mode: 'no-cors',
         headers: {
           ...(config?.lang && { 'Accept-Language': config.lang }),
           'User-Agent': USER_AGENT,
@@ -134,6 +135,7 @@ export class YoutubeTranscript {
     ).baseUrl;
 
     const transcriptResponse = await fetch(transcriptURL, {
+      mode: 'no-cors',
       headers: {
         ...(config?.lang && { 'Accept-Language': config.lang }),
         'User-Agent': USER_AGENT,
